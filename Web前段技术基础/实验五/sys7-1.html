@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>留言板</title>
+<style>
+body{
+background-color: #f1f1f1;
+}
+.bordercolor{
+border:1px solid white;
+}
+.header{font-size: 60px;color: #3333ff}
+.right{
+float: right; 
+}
+input[type=text]{
+width: 600px;
+height:30px;
+}
+</style>
+</head>
+<body>
+<table class="bordercolor" rules="rows" style="text-align: left;width: 100%;height: 100%" >
+<tr>
+<th ><span class="header">留言板 </span></th>
+<th><span class="header right">科技工作者建言</span></th>
+</tr>
+<tr>
+<td colspan="2"><span style="color: #f72a1e;font-size: 30px">发表留言</span></td>
+</tr>
+<tr>
+<td><span style="color: green;font-size: 25px">姓名:</span></td>
+<td><input type="text"></td>
+</tr>
+<tr>
+<td><span style="color: green;font-size:25px ">电子邮件</span> </td>
+<td><input type="text"> </td>
+</tr>
+<tr>
+<td><span style="color: green;font-size: 25px">分类</span> </td>
+<td><span style="color: red;font-size: 25px">科学工作者建言:</span>
+<input type="radio" value="保密" name="test" checked>
+<span style="color: #f72a1e;font-size: 25px">保密</span>
+<input type="radio" value="不保密" name="test" >
+<span style="color: #f72a1e;font-size: 25px">不保密</span>
+<span style="color: red;font-size: 25px">留言类型:</span>
+<select style="color: black;font-size: 15px">
+<option value="仅自己可见">仅自己可见</option>
+<option value="所有人可见">所有人可见</option>
+</select>
+</td>
+</tr>
+<tr>
+<td><span style="color: green;font-size: 25px">留言</span> </td>
+<td><input type="text" style="width: 600px;height: 200px"></td>
+</tr>
+<tr style="text-align: left;">
+<td colspan="2" style="color: #cc9900;font-size: 25px">如果你的留言不想被别人看到，请选择保密选项，提交后可凭系统反馈的留言编号和密码和你的姓名进行查询</td>
+</tr>
+<tr >
+<td style="float: right"><input type="submit" value="提交"> </td>
+<td style="text-indent: 300px"><input type="reset" value="重置"> </td>
+</tr>
+<tr>
+<td colspan="2" style="color: black;font-size: 25px">
+请遵守国家的有关法律，法规，尊重网上的道德。承担一切因您的行为而直接或间接引起的法律责任.<br>
+本网站拥有管理网站和笔名的一切权力。</td>
+</tr>
+</table>
+</body>
+</html>

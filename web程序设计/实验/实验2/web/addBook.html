@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="modal-title">
+    <h1 class="text-center">添加图书</h1>
+</div>
+<div class="modal-body">
+    <form class="form-group" action="" method="post">
+        <div class="form-group">
+            <label>书籍编号</label>
+            <input name="id" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>书籍名</label>
+            <input name="name" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>价格</label>
+            <input name="price" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>作者</label>
+            <input name="author" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>简介</label>
+            <input name="description" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>图片路径</label>
+            <input name="image" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="form-group">
+            <label>书籍类型</label>
+            <input name="category_id" class="form-control" type="text" placeholder="">
+        </div>
+        <div class="text-right">
+            <button class="btn btn-primary" type="submit">添加</button>
+            <button class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+    </form>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SampleController">
+   <children>
+      <GridPane layoutX="1.0" layoutY="5.0" prefHeight="650.0" prefWidth="1200.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="383.0" minHeight="10.0" prefHeight="312.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="499.0" minHeight="10.0" prefHeight="488.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: grey" GridPane.rowIndex="1">
+               <children>
+                  <Label text="运算前：" />
+                  <HBox prefHeight="372.0" prefWidth="598.0">
+                     <children>
+                        <ScrollPane prefHeight="372.0" prefWidth="298.0">
+                           <content>
+                              <ImageView fx:id="img1" fitHeight="369.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true" />
+                           </content>
+                        </ScrollPane>
+                        <TextArea fx:id="txt1" prefHeight="372.0" prefWidth="290.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: grey" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="运算后：" />
+                  <HBox prefHeight="372.0" prefWidth="598.0">
+                     <children>
+                        <ScrollPane prefHeight="372.0" prefWidth="300.0">
+                           <content>
+                              <ImageView fx:id="img2" fitHeight="369.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true" />
+                           </content>
+                        </ScrollPane>
+                        <TextArea fx:id="txt2" prefHeight="372.0" prefWidth="290.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <GridPane style="-fx-border-color: grey">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="decrype1" mnemonicParsing="false" onAction="#decrypeTxt" text="解密运算" GridPane.rowIndex="4" />
+                  <Button fx:id="encrype1" mnemonicParsing="false" onAction="#encrypeTxt" text="加密运算" GridPane.rowIndex="3" />
+                  <Button fx:id="txt" mnemonicParsing="false" onAction="#chooseTxt" text="选择文本" GridPane.rowIndex="1" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="37.0" layoutY="14.0" text="加密文字" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="10.0" layoutY="8.0" text="秘钥：" />
+                        <TextField fx:id="secret1" layoutX="71.0" layoutY="6.0" prefHeight="36.0" prefWidth="121.0" text="101" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" text="N:" />
+                        <TextField fx:id="n1" layoutX="66.0" layoutY="6.0" prefHeight="36.0" prefWidth="121.0" text="4757" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane style="-fx-border-color: grey" GridPane.columnIndex="1">
+               <children>
+                  <Label GridPane.rowIndex="1" />
+                  <Button fx:id="decrype2" mnemonicParsing="false" onAction="#decrypeImage" text="解密运算" GridPane.rowIndex="4" />
+                  <Button fx:id="encrype2" mnemonicParsing="false" onAction="#encrypeImage" text="加密运算" GridPane.rowIndex="3" />
+                  <Button fx:id="img" mnemonicParsing="false" onAction="#chooseImage" text="选择图片" GridPane.rowIndex="1" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="39.0" layoutY="16.0" text="加密图片" />
+                     </children>
+                  </Pane>
+                  <Button mnemonicParsing="false" onAction="#chooseTxt" text="选择文本" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="14.0" layoutY="12.0" text="秘钥：" />
+                        <TextField fx:id="secret2" layoutX="79.0" layoutY="6.0" prefHeight="36.0" prefWidth="121.0" text="101" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutY="12.0" text="N:" />
+                        <TextField fx:id="n2" layoutX="57.0" layoutY="6.0" prefHeight="36.0" prefWidth="142.0" text="4757" />
+                     </children>
+                  </Pane>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

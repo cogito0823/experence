@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script type="text/javascript">
+        onload = function(){
+            var use = document.getElementById('use');
+            var pw = document.getElementById('pw');
+       var pw1 = document.getElementById('pw1');
+var pw2= document.getElementById('pw2');
+sub.onclick = function(){
+                var useName = use.value;
+                var paw = pw.value;
+var paw1 =pw1.value;
+var paw2=pw2.value;
+var apos = pw2.indoxOf("@");
+                // console.log(useName[0].charCodeAt() == 48);//
+                if(useName == "" || paw == ""|| paw1==""||paw2==""){
+                        alert('输入框不能为空');
+                }else if(useName[0].charCodeAt() <= 57 && useName[0].charCodeAt() >= 48){
+                    alert('用户名不能以数字开头');
+                }else if( (useName.length) < 6 || (useName.length) > 20){
+                        alert('用户名长度不低于6，不高于20');
+                }else if(paw.length<6 || paw.length>10){
+alert('密码长度不低于6，不高于10');
+}else if(paw!=paw1){
+alert('两次输入密码不相同')
+}else if(apos==none||apos==0||paw2[apos+1]=="."){
+alert('邮箱错误')
+}
+else{
+alert('注册成功')
+}
+            }
+        }
+</script>
+<title>Document</title>
+</head>
+<body>
+<form>
+用 户 名：<input type="text" name="" id="use" value="">
+<br>
+密 码：<input type="password" name="" id="pw" value="">
+<br>
+确认密码：<input type="password" name="" id="pw1" value="">
+<br>
+电子邮箱：<input type="text" name="" id="pw3" value="">
+<br>
+<input type="submit" name="" id="sub"  value="提交">
+<input type="reset" name="" id="sub1"  value="重置">
+</form>
+</body>
+</html>

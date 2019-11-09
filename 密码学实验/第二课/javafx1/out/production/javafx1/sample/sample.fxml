@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button layoutX="455.0" layoutY="59.0" mnemonicParsing="false" onAction="#jiami" text="加密" />
+      <Button layoutX="455.0" layoutY="147.0" mnemonicParsing="false" onAction="#jiemi" text="解密" />
+      <Label fx:id="ll" layoutX="247.0" layoutY="108.0" />
+      <TextField fx:id="mingwen" layoutX="49.0" layoutY="65.0" />
+      <TextField fx:id="miyao" layoutX="49.0" layoutY="155.0" />
+      <TextField fx:id="miwen" layoutX="49.0" layoutY="247.0" />
+      <TextField fx:id="mingwenjie" layoutX="49.0" layoutY="333.0" />
+      <Label layoutX="49.0" layoutY="23.0" text="明文" />
+      <Label layoutX="49.0" layoutY="120.0" text="秘钥" />
+      <Label layoutX="49.0" layoutY="207.0" text="密文" />
+      <Label layoutX="49.0" layoutY="303.0" text="明文解" />
+   </children>
+</AnchorPane>

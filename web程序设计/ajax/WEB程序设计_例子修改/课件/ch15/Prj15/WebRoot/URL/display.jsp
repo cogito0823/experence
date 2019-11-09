@@ -1,0 +1,44 @@
+<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<html>
+<body>
+以下是订单10034585的明细：<HR>
+<table border="2">
+	<tr>
+	<td>鲜花编号</td>
+	<td>鲜花名称</td>
+	<td>鲜花单价</td>
+	<td>鲜花数量</td>
+	</tr>
+	<tr>
+	<td>0036</td>
+	<td>康乃馨</td>
+	<td>13</td>
+	<td>8</td>
+	</tr>
+	<tr>
+</table>
+<!--
+以下是订单10034562的明细：<HR>
+<table border="2">
+	<tr>
+	<td>鲜花编号</td>
+	<td>鲜花名称</td>
+	<td>鲜花单价</td>
+	<td>鲜花数量</td>
+	</tr>
+	<tr>
+	<td>0001</td>
+	<td>玫瑰</td>
+	<td>15</td>
+	<td>3</td>
+	</tr>
+	<tr>
+	<td>0002</td>
+	<td>百合</td>
+	<td>13</td>
+	<td>4</td>
+	</tr>
+</table>
+-->
+</body>
+</html>

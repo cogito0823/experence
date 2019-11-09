@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<script type="text/javascript">
+			function add(){
+				//得到这两个文本框的内容
+				n1 = Number(document.form1.txt1.value);//value是网页中控件用得最多的属性
+				n2 = Number(document.form1.txt2.value);
+				document.form1.txt3.value = n1+n2;				
+			}
+		</script>
+		<form name="form1">
+			<input name="txt1" type="text"><BR>
+			<input name="txt2"  type="text"><BR>
+			<input type="button" onclick="add()" value="求和"><BR>
+			<input name="txt3"  type="text"><BR>
+		</form>
+	</body>
+</html>

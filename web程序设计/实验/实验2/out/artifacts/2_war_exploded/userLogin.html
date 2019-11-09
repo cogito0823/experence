@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link href="css/style.css">
+    <style>
+        .login{
+            width: 300px;
+            height: 380px;
+            background-color: #f8f8f8;
+            background-image: url("images/login_background.jpg");
+            background-size: 100% 100%;
+            text-align: center;
+            position: absolute;
+            top: 100px;
+            left: 650px;
+        }
+        .tops{
+            position: absolute;
+            top: 100px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body style="background-color: rgba(247,209,191,0.78)">
+<div class="login">
+    <div class="tops">
+        <form action="/servlet/LoginServlet" method="post" >
+            <fieldset>
+                <legend><b>登录</b></legend>
+                用户名：<br>
+                <input name="username"  type="text" placeholder="请输入用户名"><br>
+                密码：<br>
+                <input name="password" type="password" placeholder="请输入密码"><br>
+            </fieldset>
+            <input type="submit" value="登入" onclick="window.open('index.jsp')">
+            <input type="button" value="注册" onclick="javascript:window.location.href='userRegister.html'">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<title>A simple AJAX example</title> 
+<script type="text/javascript"><!-- 
+  function findAuthor(file){ 
+     var xmlObj = null; 
+     if(window.XMLHttpRequest){ 
+        xmlObj = new XMLHttpRequest(); 
+     } else if(window.ActiveXObject){ 
+         xmlObj = new ActiveXObject("Microsoft.XMLHTTP"); 
+     } else { 
+      return; 
+    } 
+    xmlObj.onreadystatechange = function(){ 
+       if(xmlObj.readyState == 4){ 
+           updateObj('author',  
+        xmlObj.responseXML.getElementsByTagName('name')[0].firstChild.data); 
+       } 
+     } 
+    xmlObj.open ('GET', file, true); 
+    xmlObj.send (''); 
+  } 
+  function updateObj(obj, data){ 
+   var textNode = document.createTextNode(data); 
+   document.getElementById(obj).appendChild(textNode); 
+  } 
+  //--></script> 
+</head> 
+<body> 
+<h1>A simple AJAX program</h1> 
+<p id="obj">This page is powered by <a id='link' href="data.xml" 
+ title="View the author." 
+ onclick="findAuthor('data.xml'); this.style.display='none'; return false">See 
+Author.</a><span id="author" style="color: olive; font-weight: bolder"></span></p> 
+</body> 
+</html> 
+
+ 
+
