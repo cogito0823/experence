@@ -14,7 +14,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.naive_bayes import GaussianNB
 from sklearn import neighbors
 
-plt.style.use("fivethirtyeight")
+plt.style.use("classic")
 sns.set_style({'font.sans-serif':['simhei','Arial']})
 
 # 导入tag.xlsx
@@ -176,34 +176,20 @@ U,S=pca(features_train)
 #维度
 K=18
 
-# features_train=projectData(features_train,U,K)
+# 降维
+e = input('是否降维 1.是  2.否  ')
+if e == '1':
+    features_train=projectData(features_train,U,K)
 
-# U,S=pca(features_test)
-# features_test=projectData(features_test,U,K)
+    U,S=pca(features_test)
+    features_test=projectData(features_test,U,K)
 
-# U,S=pca(features_valid)
-# features_valid=projectData(features_valid,U,K)
+    U,S=pca(features_valid)
+    features_valid=projectData(features_valid,U,K)
 
+# -------------------------5.算法及交叉验证-------------------------
 
-#-----------------------------------------------------------------
-# for featt in lisan:
-#     liSanXing(featt)
-#     plt.show()
-# for featt in lisan:
-#     liSanXing0(featt)
-#     plt.show()
-# liSanXing1()
-
-# for featt in lianxu:
-#     lianXuXing(featt)
-    
-# heat()
-
-
-
-
-
-# ------------------CART算法及交叉验证----------------------
+# -----------------CART算法-----------------------
 
 print('------------------算法----------------------\n')
 # 利用GridSearchCV计算最优解
@@ -234,36 +220,67 @@ opt = fit_model(features_train, prices_train)
 # 输出最优模型的 'max_depth' 参数
 print("最理想CART模型的参数 'max_depth' 是 {} 。".format(opt.get_params()['max_depth']))
 
-predicted_value = opt.predict(features_valid)
-r2 = performance_metric(prices_valid, predicted_value)
-
-print("CART模型在验证数据上 R^2 分数 {:,.5f}。".format(r2))
-
-# -------------朴素贝叶斯算法及交叉验证----------------
+# -------------朴素贝叶斯算法----------------
 
 gnb = GaussianNB().fit(features_train, prices_train)
-predicted_value = gnb.predict(features_valid)
-r2 = performance_metric(prices_valid, predicted_value)
-print("朴素贝叶斯模型在验证数据上 R^2 分数 {:,.5f}。".format(r2))
 
-# -------------KNN算法及交叉验证----------------
+# -------------KNN算法----------------
 
 xxx = neighbors.KNeighborsClassifier(30)
 xxx.fit(features_train, prices_train)
-predicted_value = xxx.predict(features_valid)
-r2 = performance_metric(prices_valid, predicted_value)
-print("KNN模型在验证数据上 R^2 分数 {:,.5f}。".format(r2))
 
-# --------------测试----------------
 
-print('------------------测试----------------------\n')
-predicted_value1 = opt.predict(features_test)
-r1 = performance_metric(prices_test,predicted_value1)
-predicted_value2 = gnb.predict(features_test)
-r2 = performance_metric(prices_test,predicted_value2)
-predicted_value3 = xxx.predict(features_test)
-r3 = performance_metric(prices_test,predicted_value3)
+# ------------------交叉验证---------------------
 
-print('\nCART模型在测试数据上 R^2 分数 {:,.5f}。'.format(r1))
-print('\n朴素贝叶斯模型在测试数据上 R^2 分数 {:,.5f}。'.format(r2))
-print('\nKNN模型在测试数据上 R^2 分数 {:,.5f}。'.format(r3))
+def yanZheng():
+    predicted_value = opt.predict(features_valid)
+    r2 = performance_metric(prices_valid, predicted_value)
+    print("CART模型在验证数据上 R^2 分数 {:,.5f}。".format(r2))
+    
+    predicted_value = gnb.predict(features_valid)
+    r2 = performance_metric(prices_valid, predicted_value)
+    print("朴素贝叶斯模型在验证数据上 R^2 分数 {:,.5f}。".format(r2))
+    
+    predicted_value = xxx.predict(features_valid)
+    r2 = performance_metric(prices_valid, predicted_value)
+    print("KNN模型在验证数据上 R^2 分数 {:,.5f}。".format(r2))
+
+# -------------------------------6.测试--------------------------------
+def ceShi():
+    print('------------------测试----------------------\n')
+    predicted_value1 = opt.predict(features_test)
+    r1 = performance_metric(prices_test,predicted_value1)
+    predicted_value2 = gnb.predict(features_test)
+    r2 = performance_metric(prices_test,predicted_value2)
+    predicted_value3 = xxx.predict(features_test)
+    r3 = performance_metric(prices_test,predicted_value3)
+
+    print('\nCART模型在测试数据上 R^2 分数 {:,.5f}。'.format(r1))
+    print('\n朴素贝叶斯模型在测试数据上 R^2 分数 {:,.5f}。'.format(r2))
+    print('\nKNN模型在测试数据上 R^2 分数 {:,.5f}。'.format(r3))
+    
+
+#----------------------------    Main    -------------------------------
+
+# 绘制直方图
+for featt in lisan:
+    liSanXing(featt)
+    plt.show()
+for featt in lisan:
+    liSanXing0(featt)
+    plt.show()
+liSanXing1()
+
+# 绘制概率密度统计图
+for featt in lianxu:
+    lianXuXing(featt)
+
+# 绘制热力图   
+heat()
+
+# 交叉验证
+yanZheng()
+
+# 测试
+ceShi()
+
